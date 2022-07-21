@@ -38,9 +38,11 @@ dicionarioproduto = listarvendas()
 #FUNÇÃO PARA CADASTRAR PRODUTOS!
 def cadastroproduto(): # cadastra um produto no sistema
     os.system('cls')
+    print("=="*30)
     print(''' Bem vindo ao cadastramento de produto!
     Vamos cadastrar o produto desejado!
     ''')
+    print("=="*30)
     
     while True:
         produto = input('Digite o nome do produto: ').strip()
@@ -77,8 +79,10 @@ def cadastroproduto(): # cadastra um produto no sistema
 #FUNÇÃO PARA VISUALIZAR OS PRODUTOS CADASTRADOS!
 def visualizarproduto():
     os.system('cls')
+    print("=="*30)
     print(''' Bem vindo, vamos visualizar o produto cadastrado!
           ''')
+    print("=="*30)
     produto = input('Qual produto você deseja visualizar: ') # digita qual produto ele quer visualizar
     while produto != dicionarioproduto: # enquanto o produto não estiver no dicionario
         if produto not in dicionarioproduto:
@@ -95,8 +99,10 @@ def visualizarproduto():
 #FUNÇÃO PARA ATUALIZAR OS PRODUTOS CADASTRADOS!
 def atualizarproduto():
     os.system('cls')
+    print("=="*30)
     print('''Bem vindo, vamos atualizar algum produto já cadastrado!
         ''')
+    print("=="*30)
     produto = input('Por favor, digite um produto já cadastrado: ').strip()
     while True: # digita o produto que está cadastrado
         if produto in dicionarioproduto.keys(): # se o produto estiver no dicionário 
@@ -146,7 +152,9 @@ def atualizarproduto():
 #FUNÇÃO PARA DELETAR PRODUTOS CADASTRADOS!
 def deletarproduto():
     os.system('cls')
+    print("=="*30)
     print('Bem vendo, vamos deletar um produto do seu sistema!')
+    print("=="*30)
     deletar = input('Digite o nome do produto que você quer deletar do sistema: ').strip() # digita o produto que ele quer deletar do sistema
     if deletar in dicionarioproduto: # se o produto estiver no sistema ele deleta
         del dicionarioproduto[deletar] # deleta especificamente o produto digitado
@@ -163,40 +171,46 @@ def deletarproduto():
 
 def sistemavendas():
     os.system('cls')
-    sistema = ' '
-    while sistema != 0:
+    while True:
+        acesso = ' '
+        acesso = input("Digite a senha de acesso para funcionários: ") # Para acessar o menu de vendas, somente com a senha
+        if acesso == '188988':
+            sistema = ' '
+            while sistema != 0:
 
-        print('=='*28)
-        print('''
-            = SISTEMA DE GERENCIAMENTO DE CLIENTES =
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            ===== Cadastrar Produto  [1] ============ 
-            ===== Atualizar Produto  [2] ============
-            ===== Visualizar Produto [3] ============
-            ===== Remover Produto    [4] ============
-            ===== Sair do Sistema    [5] ============
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            =========================================
-        ''')
-        print('=='*28)
-        sistema = input('Escolha uma opção: ')
-        if sistema == '1': # acessa a parte de cadastrar os produtos caso digite 1
-            cadastroproduto()
+                print('=='*28)
+                print('''
+                    = SISTEMA DE GERENCIAMENTO DE CLIENTES =
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    ===== Cadastrar Produto  [1] ============ 
+                    ===== Atualizar Produto  [2] ============
+                    ===== Visualizar Produto [3] ============
+                    ===== Remover Produto    [4] ============
+                    ===== Sair do Sistema    [5] ============
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    =========================================
+                ''')
+                print('=='*28)
+                sistema = input('Escolha uma opção: ')
+                if sistema == '1': # acessa a parte de cadastrar os produtos caso digite 1
+                    cadastroproduto()
 
-        elif sistema == '2': # acessa a parte de visualizar o produto cadastrado caso digite 2
-            atualizarproduto()
+                elif sistema == '2': # acessa a parte de visualizar o produto cadastrado caso digite 2
+                    atualizarproduto()
 
-        elif sistema == '3': # acessa a parte de atualizar o produto cadastrado caso digite 3
-            visualizarproduto()
+                elif sistema == '3': # acessa a parte de atualizar o produto cadastrado caso digite 3
+                    visualizarproduto()
 
-        elif sistema == '4': # acessa a parte de atualizar o produto cadastrado caso digite 4
-            deletarproduto()
-        
-        elif sistema == '5': # caso queira sair do sistema
-            print('Obrigado, volte sempre!')
-            break
+                elif sistema == '4': # acessa a parte de atualizar o produto cadastrado caso digite 4
+                    deletarproduto()
+                
+                elif sistema == '5': # caso queira sair do sistema
+                    print('Obrigado, volte sempre!')
+                    break
+                else:
+                    print('Opção inválida') # retorna inválido caso digite uma opção inválida
         else:
-            print('Opção inválida') # retorna inválido caso digite uma opção inválida
+            print('Senha inválida!')
 
 
 
