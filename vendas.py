@@ -43,20 +43,20 @@ def cadastroproduto(): # cadastra um produto no sistema
     ''')
     
     while True:
-        produto = input('Digite o nome do produto: ')
+        produto = input('Digite o nome do produto: ').strip()
         if validstring(produto):
             break
         else:
             print('Produto inválido!')
     while True:
-        categoria = input('Digite a categoria do produto: ')
+        categoria = input('Digite a categoria do produto: ').strip()
         if validstring(categoria):
             break
         else:
             print("Categoria inválida!")
              
     while True:
-        preco = input('Digite o preço do produto em R$: ')
+        preco = input('Digite o preço do produto em R$: ').strip()
         if validnum(preco):
             break
         else:
@@ -97,38 +97,43 @@ def atualizarproduto():
     os.system('cls')
     print('''Bem vindo, vamos atualizar algum produto já cadastrado!
         ''')
-    produto = input('Por favor, digite um produto já cadastrado: ')
+    produto = input('Por favor, digite um produto já cadastrado: ').strip()
     while True: # digita o produto que está cadastrado
         if produto in dicionarioproduto.keys(): # se o produto estiver no dicionário 
             print(dicionarioproduto[produto]) # exibe o produto na chave zero
             if produto in dicionarioproduto.keys(): # se o produto estiver dentro do dicionário ele localiza
                 print('Localizamos o produto cadastrado!')
                 produto_novo = ' '
-                produto_novo = input('Qual informação você deseja alterar do produto: ').upper()# escolhe qual informação ele quer atualizar
-                if produto_novo == 'categoria'.upper(): # se for a categoria, ele acessar a parte de categorias
+                produto_novo = input('Qual informação você deseja alterar do produto: ').upper().strip()# escolhe qual informação ele quer atualizar
+                #=========================================================================================
+                if produto_novo == 'categoria'.upper().strip(): # se for a categoria, ele acessar a parte de categorias
                     categoria_nova = input('Digite a nova categoria: ') # digita a nova categoria
                     dicionarioproduto[produto][0] = categoria_nova # adiciona a nova categoria
                     print('Categoria atualizada com sucesso!')
                     print(f'Sua nova categoria é {categoria_nova}') # exibe a nova categoria
                     break
-                elif produto_novo == 'preço'.upper(): # se ele quiser mudar o preço, digita preço
+                #=========================================================================================
+                elif produto_novo == 'preço'.upper().strip(): # se ele quiser mudar o preço, digita preço
                     preco_novo = input('Digite um preço novo: ') # digita o novo preço
                     dicionarioproduto[produto][1] = preco_novo # guarda o novo preço
                     print('Preço ajustado com sucesso!')
                     print(f'Seu novo preço é de {preco_novo}') # exibe o novo preço
                     break
-                elif produto_novo == 'marca'.upper(): # caso ele queira alterar a marca do produto
+                #=========================================================================================
+                elif produto_novo == 'marca'.upper().strip(): # caso ele queira alterar a marca do produto
                     marca_nova = input('Digite a nova marca do seu produto: ') # digita a nova marca para o produto
                     dicionarioproduto[produto][2] = marca_nova # insere a nova marca do produto
                     print('Marca alterada com sucesso!')
                     print(f'Sua nova marca é {marca_nova}') # exibe a nova marca
                     break
-                elif produto_novo == 'durabilidade'.upper(): # caso queira modificar a durabilidade do produto
+                #=========================================================================================
+                elif produto_novo == 'durabilidade'.upper().strip(): # caso queira modificar a durabilidade do produto
                     durabi_nova = input('Digite a nova durabilidade do seu produto: ') # insere a nova durabilidade
                     dicionarioproduto[produto][3] = durabi_nova # insere no dicionário a nova durabilidade
                     print('Durabilidade alterada com sucesso!')
                     print(f"Sua durabilidade foi alterada para {durabi_nova}") # exibe a nova durabilidade
                     break
+                #=========================================================================================
                 else:
                     print('Opção não consta no nosso sistema!') # caso ele digite uma opção diferente
                     return False
@@ -142,7 +147,7 @@ def atualizarproduto():
 def deletarproduto():
     os.system('cls')
     print('Bem vendo, vamos deletar um produto do seu sistema!')
-    deletar = input('Digite o nome do produto que você quer deletar do sistema: ') # digita o produto que ele quer deletar do sistema
+    deletar = input('Digite o nome do produto que você quer deletar do sistema: ').strip() # digita o produto que ele quer deletar do sistema
     if deletar in dicionarioproduto: # se o produto estiver no sistema ele deleta
         del dicionarioproduto[deletar] # deleta especificamente o produto digitado
         print('Produto deletado com sucesso!')

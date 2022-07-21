@@ -100,17 +100,17 @@ def atualizarcliente():
     sleep(1)
    
     while True:
-        cpf = input("Por favor, insira um CPF já cadastrado: ")#cliente vai digitar qual cpf ele cadastrou
+        cpf = input("Por favor, insira um CPF já cadastrado: ").strip() #cliente vai digitar qual cpf ele cadastrou
         if cpf in registro1.keys(): #se ele estiver no dicionário ele entra
             print(registro1[cpf][0]) #exibe o dicionário
             print('Perfeito, localizamos o cliente no nosso sistema!')
             sleep(1)
             cadastro_novo = ' '
-            cadastro_novo = input('Digite qual informação você deseja atualizar: ').upper() #cliente digita qual informação ele quer alterar
+            cadastro_novo = input('Digite qual informação você deseja atualizar: ').upper().strip() #cliente digita qual informação ele quer alterar
             #============================================================================================================
-            if cadastro_novo == 'nome'.upper(): #caso ele queira o nome, irá entrar na parte de alteração do nome
+            if cadastro_novo == 'nome'.upper().strip(): #caso ele queira o nome, irá entrar na parte de alteração do nome
                 while True:
-                    nome_novo = input("Digite um novo nome: ") # Usuário vai digitar o nome dele
+                    nome_novo = input("Digite um novo nome: ").strip() # Usuário vai digitar o nome dele
                     if (validstring(nome_novo)): # Vai veirificar se é uma sting ou não
                         break
                     else:
@@ -121,9 +121,9 @@ def atualizarcliente():
                 gravaarquivo(registro1)
                 break
             #============================================================================================================
-            elif cadastro_novo == 'data de nascimento'.upper(): #caso ele queira a data de nascimento, ele entra na parte de alteração da data de nascimento.
+            elif cadastro_novo == 'data de nascimento'.upper().strip(): #caso ele queira a data de nascimento, ele entra na parte de alteração da data de nascimento.
                 while True:
-                    data_novo = input('Digite o dia do seu nascimento ex("05/05/2005"): ') # Usuário vai digitar sua data de nascimento
+                    data_novo = input('Digite o dia do seu nascimento ex("05/05/2005"): ').strip() # Usuário vai digitar sua data de nascimento
         #Optamos por sugerir o formato para o usuário mesmo colocar a /
                     if data_valida(data_novo): # Vai verificar se a data é válida
                         break
@@ -136,9 +136,9 @@ def atualizarcliente():
                 break
                 
             #====================================================================================================
-            elif cadastro_novo == 'email'.upper(): #caso ele queira mudar o email, ele entra na parte de alteração de email
+            elif cadastro_novo == 'email'.upper().strip(): #caso ele queira mudar o email, ele entra na parte de alteração de email
                 while True:
-                    email_novo = input("Digite o novo email do cliente: ") # O usuário vai digitar o email dele
+                    email_novo = input("Digite o novo email do cliente: ").strip() # O usuário vai digitar o email dele
                     if (validemail(email_novo)): # chama a função que valida o email
                         break
                     else:
@@ -149,16 +149,16 @@ def atualizarcliente():
                 gravaarquivo(registro1) # Vai salvar o novo email no arquivo
                 break
             #======================================================================================================  
-            elif cadastro_novo == 'endereço'.upper(): # caso ele queira alterar o seu endereço, entra na parte de alteração de endereço
-                endereco_novo = input('Digite seu novo endereço: ') # digita o endereço novo
+            elif cadastro_novo == 'endereço'.upper().strip(): # caso ele queira alterar o seu endereço, entra na parte de alteração de endereço
+                endereco_novo = input('Digite seu novo endereço: ').strip() # digita o endereço novo
                 registro1[cpf][3] = endereco_novo # adiciona a lista o novo endereço digitado
                 print("Seu endereço foi atualizado!")
                 print(f'Seu novo endereço é {endereco_novo}')
                 gravaarquivo(registro1) # Vai salvar o novo endereço no arquivo
                 break
             #=======================================================================================================   
-            elif cadastro_novo == 'opcional endereço'.upper(): # caso ele queria adicionar algum endereço opcional
-                opendereco_novo = input('Digite seu endereço opcional novo: ') # digita o novo endereço opcional
+            elif cadastro_novo == 'opcional endereço'.upper().strip(): # caso ele queria adicionar algum endereço opcional
+                opendereco_novo = input('Digite seu endereço opcional novo: ').strip() # digita o novo endereço opcional
                 registro1[cpf][4] = opendereco_novo # adiciona o endereço opcional ao dicionário
                 print("Seu endereço opcional foi atualizado com sucesso!")
                 print(f'Seu novo endereço opcional é {opendereco_novo}')
@@ -192,7 +192,7 @@ def visualizarcliente():
         ''')
     print("=="*30)
     sleep(1)
-    cpf = input('Digite o CPF que foi cadastrado por gentileza!: ') # cliente digita qual cliente quer visualizar a partir de seu cpf
+    cpf = input('Digite o CPF que foi cadastrado por gentileza!: ').strip() # cliente digita qual cliente quer visualizar a partir de seu cpf
     while cpf != registro1: #enquanto o cpf for diferente de dicionário, ele entra
         if cpf not in registro1:
             print('Usuário não encontrado!')
@@ -221,7 +221,7 @@ def deletarcliente():
         ''')
     print("=="*30)
     sleep(1)
-    cliente = input('Por favor, digite o CPF do cliente que você deseja apagar: ') # cliente vai digitar o cpf que ele quer tirar do sistema
+    cliente = input('Por favor, digite o CPF do cliente que você deseja apagar: ').strip() # cliente vai digitar o cpf que ele quer tirar do sistema
     if cliente in registro1: # se ele estiver no dicionário (sistema)
         del registro1[cliente] # deleta o cliente
         print('Perfeito, usuário encontrado e excluído com sucesso!')

@@ -37,9 +37,9 @@ def cadastropromocao(): # Para o cadastramento das promoções!
             suas promoções da maneira que desejar.''')
     print('=='*30)
     
-    promocao = input('Digite a promoção que você quer inserir: ') # insere o nome da promoção
+    promocao = input('Digite a promoção que você quer inserir: ').strip() # insere o nome da promoção
     while True:
-        senha = input('Digite o código da promoção: ') # insere o código para acessar as promoções
+        senha = input('Digite o código da promoção: ').strip() # insere o código para acessar as promoções
         if validnum(senha):
             break
         else:
@@ -69,7 +69,7 @@ def atualizarpromocao(): # atualizar as promoções
 atualizar as promoções da maneira que você quiser""")
     print('=='*30)
     while True:
-        senha = input("Por favor, insira uma senha da sua promoção já cadastrada: ") # informa o código de uma promoção já cadastrada
+        senha = input("Por favor, insira uma senha da sua promoção já cadastrada: ").strip() # informa o código de uma promoção já cadastrada
         if senha in dicionariopromocao: 
             print(dicionariopromocao[senha]) 
             print('Perfeito, a promoção em questão foi localizada')
@@ -94,10 +94,10 @@ def visualizarpromocao(): # função para visualizar as promoções
     print('=='*30)
     print("""Bem vindo(a), aqui você poderá visualizar
     todas as promoções ativas no sistema!""")
-    senha = input('Digite sua senha de administrador para ter acesso: ') # pede a senha de acesso do administrador
+    senha = input('Digite sua senha de administrador para ter acesso: ').strip() # pede a senha de acesso do administrador
     if senha == '12345678':
         while senha != 0:
-            codigo = input("Digite o código da promoção que você quer visualizar: ") # pede o código vinculado a promoção
+            codigo = input("Digite o código da promoção que você quer visualizar: ").strip() # pede o código vinculado a promoção
             if codigo not in dicionariopromocao:
                 print('Promoção não encontrada!')
                 continuar = input('Deseja continuar procurando[S/N]: ') # Caso ele não encontre o código, ele pergunta se quer continuar ou não
@@ -130,7 +130,7 @@ def deletarpromocao(): # função para deletar uma promoção
     mente""")
     print('=='*30)
     
-    senha = input("""Digite o código da promoção que você cadastrou: """) # pergunta pro usuário qual promoção ele quer deletar
+    senha = input("""Digite o código da promoção que você cadastrou: """).strip() # pergunta pro usuário qual promoção ele quer deletar
     if senha in dicionariopromocao: # se o código da promoção estiver no dicionário, ele deleta
         del dicionariopromocao[senha]
         print('Promoção excluída com sucesso')
