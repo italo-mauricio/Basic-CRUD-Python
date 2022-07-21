@@ -45,27 +45,27 @@ def cadastrocliente(): # Função de cadastro de cliente!
     print("=="*30)
     sleep(1)
     while True:
-        nome = input("Por favor, digite o nome do cliente: ") # Usuário vai digitar o nome dele
+        nome = input("Por favor, digite o nome do cliente: ").strip() # Usuário vai digitar o nome dele
         if (validstring(nome)): # Vai veirificar se é uma sting ou não
             break
         else:
             print('Nome inválido')
     while True:
-        data = input('Digite o dia do seu nascimento ex("05/05/2005"): ') # Usuário vai digitar sua data de nascimento
+        data = input('Digite o dia do seu nascimento ex("05/05/2005"): ').strip() # Usuário vai digitar sua data de nascimento
         #Optamos por sugerir o formato para o usuário mesmo colocar a /
         if data_valida(data): # Vai verificar se a data é válida
             break
         else:
             print('Data inválida!')
     while True:
-        email = input("Digite o email do cliente: ") # O usuário vai digitar o email dele
+        email = input("Digite o email do cliente: ").strip() # O usuário vai digitar o email dele
         if (validemail(email)): # chama a função que valida o email
             break
         else:
             print("Email inválido!")
             
-    endereco = input("Digite o endereço do cliente: ") # Aqui o cliente irá digitar o seu endereço
-    complemento = input("Digite o complemento(Opcional): ") # Aqui o cliente vai digitar um possível complemento
+    endereco = input("Digite o endereço do cliente: ").strip() # Aqui o cliente irá digitar o seu endereço
+    complemento = input("Digite o complemento(Opcional): ").strip() # Aqui o cliente vai digitar um possível complemento
     
     while True:
         cpf = input("Por favor, digite um CPF válido: ") #aqui o cliente vai digitar o seu cpf
