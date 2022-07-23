@@ -191,9 +191,9 @@ def atualizarcliente():
 def visualizarcliente():
 
     print("=="*30)
-    print('''Olá, você escolheu a opção de visualizar um usuário já cadastrado!
-            Para isso precisamos de um CPF cálido de usuário!
-            Carregando..
+    print('''   Olá, você escolheu a opção de visualizar um usuário já cadastrado!
+    Para isso precisamos de um CPF cálido de usuário!
+    Carregando..
         ''')
     print("=="*30)
     sleep(1)
