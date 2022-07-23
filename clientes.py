@@ -51,12 +51,15 @@ def cadastrocliente(): # Função de cadastro de cliente!
         else:
             print('Nome inválido')
     while True:
+        cont = 0
         data = input('Digite o dia do seu nascimento ex("05/05/2005"): ').strip() # Usuário vai digitar sua data de nascimento
         #Optamos por sugerir o formato para o usuário mesmo colocar a /
-        if data_valida(data): # Vai verificar se a data é válida
-            break
+        if validstring(data):
+            print("Data inválida")
+            cont+=1
         else:
-            print('Data inválida!')
+            if data_valida(data):
+                break
     while True:
         email = input("Digite o email do cliente: ").strip() # O usuário vai digitar o email dele
         if (validemail(email)): # chama a função que valida o email
@@ -123,12 +126,14 @@ def atualizarcliente():
             #============================================================================================================
             elif cadastro_novo == 'data de nascimento'.upper().strip(): #caso ele queira a data de nascimento, ele entra na parte de alteração da data de nascimento.
                 while True:
-                    data_novo = input('Digite o dia do seu nascimento ex("05/05/2005"): ').strip() # Usuário vai digitar sua data de nascimento
-        #Optamos por sugerir o formato para o usuário mesmo colocar a /
-                    if data_valida(data_novo): # Vai verificar se a data é válida
-                        break
+                    cont = 0
+                    data_novo = input('Digite o dia do seu nascimento ex("05/05/2005"): ').strip() # Adiciona uma nova data
+                    if validstring(data_novo): # faz a validação, se ele digitar uma string ele impede o acesso
+                        print("Data inválida")
+                        cont+=1
                     else:
-                        print('Data inválida!')
+                        if data_valida(data_novo):
+                            break
                 registro1[cpf][1] = data_novo # armazena no dicionário posição data a nova data
                 print('Sua data de nascimento foi atualizada!')
                 print(f'Sua nova data de nascimento é {data_novo}')
