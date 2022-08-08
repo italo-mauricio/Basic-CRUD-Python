@@ -178,19 +178,21 @@ def sistemavendas():
             sistema = ' '
             while sistema != 0:
 
-                print('=='*28)
+                
                 print('''
-                    = SISTEMA DE GERENCIAMENTO DE CLIENTES =
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                    ===== Cadastrar Produto  [1] ============ 
-                    ===== Atualizar Produto  [2] ============
-                    ===== Visualizar Produto [3] ============
-                    ===== Remover Produto    [4] ============
-                    ===== Sair do Sistema    [5] ============
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                    =========================================
+                | ================================================ |
+                | ------------------------------------------------ |
+                | ===== SISTEMA DE GERENCIAMENTO DE CLIENTES ===== |
+                | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ |
+                | ----------- Cadastrar Produto  [1] ------------- | 
+                | ----------- Atualizar Produto  [2] ------------- |
+                | ----------- Visualizar Produto [3] ------------- |
+                | ----------- Remover Produto    [4] ------------- |
+                | ----------- Sair do Sistema    [5] ------------- |
+                | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ |
+                | ================================================ |
                 ''')
-                print('=='*28)
+          
                 sistema = input('Escolha uma opção: ')
                 if sistema == '1': # acessa a parte de cadastrar os produtos caso digite 1
                     cadastroproduto()
