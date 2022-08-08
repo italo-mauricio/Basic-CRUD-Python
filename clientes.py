@@ -242,28 +242,28 @@ def deletarcliente():
 
 
 #Função de chamada da tela principal de menu clientes
-def telaprincipalcliente(): # Aréa do cliente
-    os.system('cls')
-    usuário = ' '
-    print('=='*28)
-    print('''
-        = SISTEMA DE GERENCIAMENTO DE CLIENTES =
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        ===== Cadastrar Cliente [1] ============ 
-        ===== Atualizar Dados   [2] ============
-        ===== Visualizar Dados  [3] ============
-        ===== Remover Dados     [4] ============
-        ===== Sair do Sistema   [5] ============
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        ========================================
-    ''')
-    print('=='*28)
-    usuário = ' '
-    usuário = input('Por favor, escolha uma das 5 opções: ')
-    while usuário != '5':
+def telaprincipalcliente():
+    while True: # Aréa do cliente
+        os.system('cls')
 
+        print('''
+        | ============================================== |
+        | ---------------------------------------------- |
+        | ==== SISTEMA DE GERENCIAMENTO DE CLIENTES ==== |
+        | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ |
+        | ---------- Cadastrar Cliente [1] ------------- | 
+        | ---------- Atualizar Dados   [2] ------------- |
+        | ---------- Visualizar Dados  [3] ------------- |
+        | ---------- Remover Dados     [4] ------------- |
+        | ---------- Sair do Sistema   [5] ------------- |
+        | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ |
+        | ============================================== |
+        ''')
+
+        usuário = ' '
+        usuário = input('Por favor, escolha uma das 5 opções: ')
         if usuário == '1': # se ele quiser se cadastrar no sistema digita 1
-            cadastrocliente()
+                cadastrocliente()
         elif usuário == '2': # se ele quiser atualizar alguma informação no sistema digita 2
             atualizarcliente()
         elif usuário == '3': # se ele quiser visualizar alguma informação no sistema digita 3
@@ -288,4 +288,4 @@ def telaprincipalcliente(): # Aréa do cliente
 
 
 
-    
+        
