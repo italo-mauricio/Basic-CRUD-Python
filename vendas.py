@@ -176,9 +176,7 @@ def sistemavendas():
         acesso = input("Digite a senha de acesso para funcionários: ") # Para acessar o menu de vendas, somente com a senha
         if acesso == '188988':
             sistema = ' '
-            while sistema != 0:
-
-                
+            while True:
                 print('''
                 | ================================================ |
                 | ------------------------------------------------ |
