@@ -157,23 +157,24 @@ def deletarpromocao(): # função para deletar uma promoção
 
 
 def menupromocoes():
-    os.system('cls')
-    print('''
-        = SISTEMA DE GERENCIAMENTO DE CLIENTES =
-        ========================================
-        ===== Cadastrar Promoção  [1] ========== 
-        ===== Atualizar Promoção  [2] ==========
-        ===== Visualizar Promoção [3] ==========
-        ===== Remover Promoção    [4] ==========
-        ===== Retornar ao menu    [5] ==========
-        ========================================
-        ========================================
-    ''')
-    usuario = input("Escolha uma opção válida: ")
-    while usuario != "5":
-
+    while True:
+        os.system('cls')
+        print('''
+        | =============================================== |
+        | ----------------------------------------------- |
+        | ==== SISTEMA DE GERENCIAMENTO DE CLIENTES ===== |
+        | =============================================== |
+        | --------- Cadastrar Promoção  [1] ------------- | 
+        | --------- Atualizar Promoção  [2] ------------- |
+        | --------- Visualizar Promoção [3] ------------- |
+        | --------- Remover Promoção    [4] ------------- |
+        | --------- Retornar ao menu    [5] ------------- |
+        | ----------------------------------------------- |
+        | =============================================== |
+        ''')
+        usuario = input("Escolha uma opção válida: ")
         if usuario == '1': # se ele cadastrar alguma promoção no sistema digita 1
-            cadastropromocao()
+                cadastropromocao()
         elif usuario == '2': # se ele quiser atualizar alguma promoção no sistema digita 2
             atualizarpromocao()
         elif usuario == '3': # se ele quiser visualizar promoção ativa no sistema digita 3
@@ -188,4 +189,4 @@ def menupromocoes():
             break
         else:
             print('Opção inválida!') # caso digite qualquer outra opção, retorna inválida
-            return False 
+            sleep(2)
