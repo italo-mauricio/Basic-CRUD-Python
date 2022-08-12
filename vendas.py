@@ -6,6 +6,7 @@ import pickle
 
 
 
+
 #FUNÇÃO PARA O MENU DE VENDAS!
 #PARTE EXCLUSIVA DOS FUNCIONÁRIOS
 
@@ -211,6 +212,13 @@ def sistemavendas():
                     print('Opção inválida') # retorna inválido caso digite uma opção inválida
         else:
             print('Senha inválida!')
+            cont = input("Você deseja continuar?[S/N]: ").strip().upper()[0]
+            if cont == 'S'.upper():
+                sistemavendas()
+            elif cont == 'N'.upper():
+                break
+            else:
+                print('Opção inválida!')
 
 
 
