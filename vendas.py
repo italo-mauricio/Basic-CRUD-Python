@@ -213,9 +213,9 @@ def sistemavendas():
         else:
             print('Senha inválida!')
             cont = input("Você deseja continuar?[S/N]: ").strip().upper()[0]
-            if cont == 'S'.upper():
+            if cont == 'S'.upper()[0]:
                 sistemavendas()
-            elif cont == 'N'.upper():
+            elif cont == 'N'.upper()[0]:
                 break
             else:
                 print('Opção inválida!')
