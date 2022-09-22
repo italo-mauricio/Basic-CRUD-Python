@@ -204,7 +204,30 @@ def visualizarcliente():
             return False
         else:
             print('Usuário encontrado!')
-            print(registro1[cpf])
+            print(f'''
+            | ----------------------- Seus Dados ------------------------------ |
+            | ================================================================= |
+            |
+            |
+            | Nome = {registro1[cpf][0]}
+            | Data de Nascimento = {registro1[cpf][1]}
+            | Email = {registro1[cpf][2]}
+            | Endereço = {registro1[cpf][3]}
+            | Opcional = {registro1[cpf][4]}
+            |
+            |
+            |
+            | ================================================================= |
+            | ----------------------------------------------------------------- |
+            
+            
+            
+            
+            
+            
+            
+            
+            ''')
             break
     
     sleep(3) # decidimos usar sleep para facilitar a visualização final
