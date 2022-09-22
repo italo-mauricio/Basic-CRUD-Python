@@ -189,7 +189,7 @@ def atualizarcliente():
 
 #Essa função é responsável por visualizar os dados do Cliente.   
 def visualizarcliente():
-
+    os.system("cls")
     print("=="*30)
     print('''   Olá, você escolheu a opção de visualizar um usuário já cadastrado!
     Para isso precisamos de um CPF cálido de usuário!
@@ -220,14 +220,8 @@ def visualizarcliente():
             | ================================================================= |
             | ----------------------------------------------------------------- |
             
-            
-            
-            
-            
-            
-            
-            
             ''')
+            conti = input("Press START for continue ...)
             break
     
     sleep(3) # decidimos usar sleep para facilitar a visualização final
