@@ -2,7 +2,7 @@ import os
 from validacoes import *
 from time import sleep
 import pickle
-
+import pwinput
 
 
 
@@ -71,7 +71,7 @@ def cadastrocliente(): # Função de cadastro de cliente!
     complemento = input("Digite o complemento(Opcional): ").strip() # Aqui o cliente vai digitar um possível complemento
     
     while True:
-        cpf = input("Por favor, digite um CPF válido: ") #aqui o cliente vai digitar o seu cpf
+        cpf = pwinput.pwinput("Por favor, digite um CPF válido: ") #aqui o cliente vai digitar o seu cpf
         if (cadastrocpf(cpf)):
             if cpf not in registro1: #caso ele não esteja no dicionário, ele irá colocar
                 registro1[cpf] = [nome, data, email,endereco,complemento] #dicionário recebe as informações
@@ -85,7 +85,7 @@ def cadastrocliente(): # Função de cadastro de cliente!
             print('CPF inválido!') 
 
     sleep(3) # decidimos usar sleep para facilitar a visualização final
-    telaprincipalcliente()
+   
         
         
 
@@ -180,7 +180,7 @@ def atualizarcliente():
             print('Usuário não cadastrado, tente novamente!') # caso o cpf não esteja cadastrado no sistema
     
     sleep(3)  # decidimos usar sleep para facilitar a visualização final      
-    telaprincipalcliente()
+
     
 
         
@@ -221,11 +221,10 @@ def visualizarcliente():
             | ----------------------------------------------------------------- |
             
             ''')
-            conti = input("Press START for continue ...)
+            conti = input("Press START for continue ...")
             break
-    
-    sleep(3) # decidimos usar sleep para facilitar a visualização final
-    telaprincipalcliente()   
+   
+ 
        
 
     
@@ -249,10 +248,7 @@ def deletarcliente():
         print('Perfeito, usuário encontrado e excluído com sucesso!')
     else:
         print("Infelizmente não encontramos este usuário em nosso sistema!")  # caso não exista o usuário no sistema
-    
-    sleep(3) # decidimos usar sleep para facilitar a visualização final
-    telaprincipalcliente()
-          
+  
 
 
 

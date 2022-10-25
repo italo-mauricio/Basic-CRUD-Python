@@ -7,8 +7,7 @@ import pickle
 
 
 
-#FUNÇÃO PARA O MENU DE VENDAS!
-#PARTE EXCLUSIVA DOS FUNCIONÁRIOS
+
 
 def listarvendas(): # Função para listar os itens dos arquivos
     try:
