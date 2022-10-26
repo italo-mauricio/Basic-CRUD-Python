@@ -261,17 +261,17 @@ def telaprincipalcliente():
         os.system('cls')
 
         print('''
-        | ============================================== |
-        | ---------------------------------------------- |
-        | ==== SISTEMA DE GERENCIAMENTO DE CLIENTES ==== |
-        | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ |
-        | ---------- Cadastrar Cliente [1] ------------- | 
-        | ---------- Atualizar Dados   [2] ------------- |
-        | ---------- Visualizar Dados  [3] ------------- |
-        | ---------- Remover Dados     [4] ------------- |
-        | ---------- Sair do Sistema   [5] ------------- |
-        | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ |
-        | ============================================== |
+        
+        | ---------------------------------------------------- |
+        | ======= SISTEMA DE GERENCIAMENTO DE CLIENTES ======= |
+        |                                                      |
+        |              Cadastrar Cliente [1]                   | 
+        |              Atualizar Dados   [2]                   |
+        |              Visualizar Dados  [3]                   |
+        |              Remover Dados     [4]                   |
+        |              Sair do Sistema   [0]                   |
+        |                                                      |
+        | ================== since 2022 ====================== |
         ''')
 
         usuário = ' '
@@ -284,12 +284,12 @@ def telaprincipalcliente():
             visualizarcliente()
         elif usuário == '4': # se ele quiser deletar o seu perfil no sistema digita 4
             deletarcliente()
-        elif usuário == '5':
+        elif usuário == '0':
             print('Obrigado, volte sempre!') # caso queira sair, digita 5
             break
         else:
             print('Opção inválida!') # caso digite qualquer outra opção, retorna inválida
-            return False 
+          
 
         
 
