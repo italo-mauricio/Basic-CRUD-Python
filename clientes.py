@@ -191,15 +191,15 @@ def atualizarcliente():
 #Essa função é responsável por visualizar os dados do Cliente.   
 def visualizarcliente():
     os.system("cls")
-    print("=="*30)
+
     print('''   Olá, você escolheu a opção de visualizar um usuário já cadastrado!
     Para isso precisamos de um CPF cálido de usuário!
     Carregando..
         ''')
-    print("=="*30)
+  
     sleep(1)
-    cpf = input('Digite o CPF que foi cadastrado por gentileza!: ').strip() # cliente digita qual cliente quer visualizar a partir de seu cpf
-    while cpf != registro1: #enquanto o cpf for diferente de dicionário, ele entra
+    cpf = pwinput.pwinput('Digite o CPF que foi cadastrado por gentileza!: ')
+    while cpf != registro1: 
         if cpf not in registro1:
             print('Usuário não encontrado!')
             return False
@@ -208,16 +208,16 @@ def visualizarcliente():
             print(f'''
             | ----------------------- Seus Dados ------------------------------ |
             | ================================================================= |
-            |
-            |
-            | Nome = {registro1[cpf][0]}
-            | Data de Nascimento = {registro1[cpf][1]}
-            | Email = {registro1[cpf][2]}
-            | Endereço = {registro1[cpf][3]}
-            | Opcional = {registro1[cpf][4]}
-            |
-            |
-            |
+            
+            
+                            Nome = {registro1[cpf][0]}
+                            Data de Nascimento = {registro1[cpf][1]}
+                            Email = {registro1[cpf][2]}
+                            Endereço = {registro1[cpf][3]}
+                            Opcional = {registro1[cpf][4]}
+            
+            
+            
             | ================================================================= |
             | ----------------------------------------------------------------- |
             
