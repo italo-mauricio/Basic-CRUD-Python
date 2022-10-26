@@ -1,8 +1,9 @@
-import os
+import os, pickle
 from validacoes import *
 from time import sleep
 import pickle
 import pwinput
+
 
 
 
